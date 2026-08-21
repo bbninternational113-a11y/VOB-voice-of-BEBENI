@@ -1,4 +1,4 @@
-const btn = document.getElementById("menuBtn");
+const btn = document.getElementById("menu");
 const nav = document.getElementById("nav");
 
 if (btn && nav) {
