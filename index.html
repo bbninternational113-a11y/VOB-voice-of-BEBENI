@@ -1,10 +1,411 @@
-<!doctype html><html lang="ha"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VOB – Voice of Bebeni</title><meta name="description" content="VOB – Voice of Bebeni"><link rel="stylesheet" href="style.css"></head><body>
-<header><div class="nav"><a class="logo" href="#home">VOB<small>VOICE OF BEBENI</small></a><button id="menu" aria-label="Buɗe menu">☰</button><nav id="nav"><a href="#home">Gida</a><a href="#about">Game da VOB</a><a href="#values">Darajoji</a><a href="#constitution">Kundin Tsari</a><a href="#leadership">Shugabanci</a><a href="#membership">Membobi</a><a href="#contact">Tuntube Mu</a></nav></div></header>
-<section id="home" class="hero"><div class="wrap"><b>VOB • VOICE OF BEBENI</b><h1>Haɗin Kai, Girmamawa,<br>Gaskiya, Amana & Ci Gaba</h1><p>Ƙungiya mai haɗa kan membobi, ƙarfafa zaman lafiya, mutunta juna da aiki tare domin ci gaba.</p><a class="btn light" href="#about">Game da VOB</a> <a class="btn outline" href="#membership">Kasance Memba</a></div></section>
-<section id="about"><div class="wrap"><label>GAME DA MU • ABOUT US</label><h2>VOB – Voice of Bebeni</h2><p>VOB tana aiki domin ƙarfafa haɗin kai, gaskiya, amana, mutunta juna da ci gaban membobi da al'umma.</p><div class="cards"><article><h3>🤝 Haɗin Kai</h3><p>Muna haɗa kan membobi domin ƙarfi da fahimtar juna.</p></article><article><h3>⚖️ Adalci</h3><p>Muna ƙarfafa adalci da guje wa son rai.</p></article><article><h3>🌱 Ci Gaba</h3><p>Muna neman ci gaban membobi da al'umma.</p></article></div></div></section>
-<section id="values" class="soft"><div class="wrap"><label>KA'IDODINMU • OUR VALUES</label><h2>Abubuwan da muke tsayawa a kai</h2><div class="cards"><article><h3>Gaskiya</h3><p>Muna aiki cikin gaskiya da amana.</p></article><article><h3>Mutunta Juna</h3><p>Kowane memba yana da daraja kuma ana sauraron ra'ayinsa.</p></article><article><h3>Zaman Lafiya</h3><p>Muna magance sabani cikin natsuwa da sulhu.</p></article></div></div></section>
-<section id="constitution"><div class="wrap"><label>CONSTITUTION • KUNDIN DOKOKI</label><h2>Dokokin VOB</h2><div class="rules"><p><b>01</b> Mutunta kowane memba.</p><p><b>02</b> Guje wa zagi, barazana da rarrabuwar kai.</p><p><b>03</b> A saurari ra'ayin membobi cikin adalci.</p><p><b>04</b> A gudanar da kuɗaɗen ƙungiya cikin gaskiya.</p><p><b>05</b> A fara sasanta rikici cikin zaman lafiya.</p><p><b>06</b> Shugabanni da membobi su bi kundin dokoki.</p></div></div></section>
-<section id="leadership" class="soft"><div class="wrap"><label>LEADERSHIP • SHUGABANCI</label><h2>Shugabancin VOB</h2><div class="cards four"><article><div class="avatar">SH</div><h3>Shugaba</h3><p>Chairman / President</p></article><article><div class="avatar">MS</div><h3>Mataimakin Shugaba</h3><p>Vice Chairman</p></article><article><div class="avatar">SA</div><h3>Sakatare</h3><p>Secretary</p></article><article><div class="avatar">MA</div><h3>Ma'aji</h3><p>Treasurer</p></article></div><p class="note">Za mu saka sunayen shugabanni da hotunansu idan ka ba da bayanan su.</p></div></section>
-<section id="membership"><div class="wrap"><label>MEMBERSHIP • MEMBOBI</label><h2>Kasance cikin VOB</h2><div class="membership"><div><h3>Rijistar Memba</h3><p>VOB tana maraba da membobin da ke son haɗin kai, mutunci, gaskiya da ci gaba.</p><ul><li>Kowane memba zai samu Member ID.</li><li>A adana bayanan memba cikin tsari.</li><li>A kiyaye sirrin bayanan membobi.</li></ul></div><div class="card"><b>“Tare Za Mu Ƙara Ƙarfi.”</b><a class="btn green" href="#contact">Nemi Rijista</a></div></div></div></section>
-<section id="contact" class="soft"><div class="wrap"><label>CONTACT • TUNTUƁE MU</label><h2>Mu ji daga gare ka</h2><div class="contact"><p><b>Waya:</b> __________________</p><p><b>Email:</b> __________________</p><p><b>Adireshi:</b> __________________</p></div></div></section>
-<footer><b>VOB – VOICE OF BEBENI</b><p>HAƊIN KAI • GIRMAMAWA • GASKIYA • AMANA • CI GABA</p><small>© <span id="year"></span> VOB</small></footer><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VOB - Voice of Bebeni</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f4f8f6;
+  color:#17231f;
+  line-height:1.6;
+}
+
+header{
+  background:#05613f;
+  color:white;
+  padding:18px 6%;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  color:white;
+  text-decoration:none;
+  font-size:26px;
+  font-weight:bold;
+}
+
+.menu a{
+  color:white;
+  text-decoration:none;
+  margin-left:18px;
+  font-weight:bold;
+}
+
+.hero{
+  background:#05613f;
+  color:white;
+  padding:70px 6%;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  font-size:18px;
+}
+
+section{
+  padding:55px 6%;
+}
+
+.wrap{
+  max-width:900px;
+  margin:auto;
+}
+
+.title{
+  color:#05613f;
+  font-size:16px;
+  font-weight:bold;
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+
+h2{
+  font-size:35px;
+  margin-bottom:20px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  margin-top:20px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+/* REGISTER FORM */
+
+.register-box{
+  background:white;
+  max-width:700px;
+  margin:25px auto;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 5px 25px rgba(0,0,0,.10);
+}
+
+.form-group{
+  margin-bottom:18px;
+}
+
+.form-group label{
+  display:block;
+  font-weight:bold;
+  margin-bottom:7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  padding:13px;
+  border:1px solid #ccd8d3;
+  border-radius:9px;
+  font-size:16px;
+  outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:#05613f;
+}
+
+.register-btn{
+  width:100%;
+  padding:15px;
+  background:#05613f;
+  color:white;
+  border:0;
+  border-radius:9px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.register-btn:hover{
+  background:#034d32;
+}
+
+.success{
+  display:none;
+  margin-top:20px;
+  padding:15px;
+  background:#e4f7ed;
+  border-left:5px solid #05613f;
+  border-radius:8px;
+}
+
+.member-list{
+  margin-top:25px;
+}
+
+.member{
+  background:#f7faf8;
+  padding:15px;
+  margin-top:12px;
+  border-radius:10px;
+  border-left:4px solid #05613f;
+}
+
+footer{
+  background:#05613f;
+  color:white;
+  text-align:center;
+  padding:30px;
+}
+
+@media(max-width:700px){
+  .menu{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  h2{
+    font-size:28px;
+  }
+
+  section{
+    padding:40px 5%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="#home">VOB</a>
+
+    <div class="menu">
+      <a href="#home">Gida</a>
+      <a href="#about">Game da Mu</a>
+      <a href="#membership">Membobi</a>
+      <a href="#contact">Tuntuɓe Mu</a>
+    </div>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <h1>VOB - VOICE OF BEBENI</h1>
+  <p>HADIN KAI • GIRMAMAWA • GASKIYA • AMANA • CI GABA</p>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="title">GAME DA MU</div>
+    <h2>Voice of Bebeni</h2>
+
+    <div class="card">
+      <p>
+        VOB - Voice of Bebeni kungiya ce da aka kafa domin
+        haɗin kai, girmama juna, gaskiya, amana da ci gaban
+        al'umma.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="membership">
+  <div class="wrap">
+
+    <div class="title">MEMBERSHIP • MEMBOBI</div>
+
+    <h2>Kasance cikin VOB</h2>
+
+    <div class="register-box">
+
+      <h2>Rijistar Memba</h2>
+
+      <form id="memberForm">
+
+        <div class="form-group">
+          <label>Sunanka cikakke</label>
+          <input
+            type="text"
+            id="fullName"
+            placeholder="Shigar da cikakken suna"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label>Lambar waya</label>
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Misali: 08012345678"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Misali: example@gmail.com"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label>Jinsi / Gender</label>
+
+          <select id="gender" required>
+            <option value="">Zaɓi jinsi</option>
+            <option value="Namiji">Namiji</option>
+            <option value="Mace">Mace</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Adireshi</label>
+
+          <textarea
+            id="address"
+            rows="3"
+            placeholder="Shigar da adireshinka"
+            required></textarea>
+        </div>
+
+        <button class="register-btn" type="submit">
+          REGISTER / YI RIJISTA
+        </button>
+
+      </form>
+
+      <div class="success" id="successMessage">
+        ✅ An yi rijistarka cikin nasara!
+      </div>
+
+    </div>
+
+    <div class="card member-list">
+
+      <h3>Sabbin Membobi</h3>
+
+      <div id="members"></div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+
+    <div class="title">CONTACT</div>
+
+    <h2>Tuntuɓe Mu</h2>
+
+    <div class="card">
+      <p><b>VOB - Voice of Bebeni</b></p>
+      <p>📞 Phone: 09028198717</p>
+      <p>📧 Email: bbninternational113@gmail.com</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <b>VOB - VOICE OF BEBENI</b>
+  <p>Haɗin kai • Girmamawa • Gaskiya • Amana</p>
+</footer>
+
+<script>
+
+const form = document.getElementById("memberForm");
+const membersDiv = document.getElementById("members");
+const successMessage = document.getElementById("successMessage");
+
+let members = JSON.parse(localStorage.getItem("vobMembers")) || [];
+
+function showMembers(){
+
+  membersDiv.innerHTML = "";
+
+  if(members.length === 0){
+    membersDiv.innerHTML =
+      "<p>Babu sabon memba tukuna.</p>";
+    return;
+  }
+
+  members.forEach(function(member, index){
+
+    const div = document.createElement("div");
+
+    div.className = "member";
+
+    div.innerHTML = `
+      <b>VOB-${String(index + 1).padStart(3,"0")}</b><br>
+      <strong>${member.name}</strong><br>
+      📞 ${member.phone}<br>
+      📧 ${member.email}<br>
+      Jinsi: ${member.gender}<br>
+      Adireshi: ${member.address}
+    `;
+
+    membersDiv.appendChild(div);
+
+  });
+}
+
+form.addEventListener("submit", function(event){
+
+  event.preventDefault();
+
+  const member = {
+
+    name: document.getElementById("fullName").value,
+    phone: document.getElementById("phone").value,
+    email: document.getElementById("email").value,
+    gender: document.getElementById("gender").value,
+    address: document.getElementById("address").value
+
+  };
+
+  members.push(member);
+
+  localStorage.setItem(
+    "vobMembers",
+    JSON.stringify(members)
+  );
+
+  successMessage.style.display = "block";
+
+  form.reset();
+
+  showMembers();
+
+});
+
+showMembers();
+
+</script>
+
+</body>
+        </html>
